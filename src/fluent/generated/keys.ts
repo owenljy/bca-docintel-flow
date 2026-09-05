@@ -32,10 +32,12 @@ declare global {
                     'poll-done-check': {
                         table: 'sys_hub_flow_logic_instance_v2'
                         id: '28e0fef3e2174e59bc9180225cc70782'
+                        deleted: true
                     }
                     'poll-exit': {
                         table: 'sys_hub_flow_logic_instance_v2'
                         id: '28fb3b218720415ca89b1ef662dff131'
+                        deleted: true
                     }
                     'poll-loop': {
                         table: 'sys_hub_flow_logic_instance_v2'

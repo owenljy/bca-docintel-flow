@@ -1,6 +1,6 @@
 {
-    "scope": "x_bca_findoc",
-    "scopeId": "522e85a4858b49a4a434b2eacffb5b5b",
+    "scope": "x_snc_findoc",
+    "scopeId": "fbf6ff938d4848288698173f43d40db8",
     "name": "BCA Financial Report Extraction",
     "dependencies": {
         "x_bca_reg": {

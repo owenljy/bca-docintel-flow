@@ -25,9 +25,8 @@ export default Flow(
             { recordId: wfa.dataPill(params.trigger.current.sys_id, 'string') }
         )
 
-        wfa.flowLogic.forEach(
-            ['1', '2', '3', '4', '5', '6'],
-            { $id: Now.ID['poll-loop'] },
+        wfa.flowLogic.doTheFollowing(
+            { $id: Now.ID['poll-loop'], label: 'Poll until extraction completes' },
             () => {
                 wfa.flowLogic.waitForADuration({
                     $id: Now.ID['poll-wait'],
@@ -44,15 +43,7 @@ export default Flow(
                     }
                 )
 
-                wfa.flowLogic.if(
-                    {
-                        $id: Now.ID['poll-done-check'],
-                        condition: `${wfa.dataPill(pollResult.done, 'boolean')}=true`,
-                    },
-                    () => {
-                        wfa.flowLogic.exitLoop({ $id: Now.ID['poll-exit'] })
-                    }
-                )
+                wfa.flowLogic.until(`${wfa.dataPill(pollResult.done, 'boolean')}=true`)
             }
         )
     }
