@@ -1,0 +1,12 @@
+{
+    "scope": "x_bca_findoc",
+    "scopeId": "522e85a4858b49a4a434b2eacffb5b5b",
+    "name": "BCA Financial Report Extraction",
+    "dependencies": {
+        "x_bca_reg": {
+            "tables": [
+                "x_bca_reg_contractor_reg"
+            ]
+        }
+    }
+}
