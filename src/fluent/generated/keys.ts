@@ -108,6 +108,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_hub_action_output'
+                        id: '1e466a9f444b4dd698d3ca46bf48962a'
+                        key: {
+                            model: 'ae6c3cf454be489bbd030cb8d6f7b6d3'
+                            element: 'recordId'
+                        }
+                    },
+                    {
                         table: 'sys_variable_value'
                         id: '20309483451e4da2bea5444e7d723005'
                         key: {
@@ -141,11 +149,27 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_hub_step_ext_input'
+                        id: '388d422b63dc4c70af1faa31d3b4d3a8'
+                        key: {
+                            model: '459228bb081646faac5c3d04692517d6'
+                            element: 'attachmentId'
+                        }
+                    },
+                    {
                         table: 'sys_variable_value'
                         id: '42676b510b3a4ebe90546d2ea2139e9e'
                         key: {
                             document_key: '459228bb081646faac5c3d04692517d6'
                             variable: '71aa7f6647032200b4fad7527c9a719b'
+                        }
+                    },
+                    {
+                        table: 'sys_hub_action_input'
+                        id: '470c6f8e890d485f98cdb6002ea9096a'
+                        key: {
+                            model: 'ae6c3cf454be489bbd030cb8d6f7b6d3'
+                            element: 'attachmentId'
                         }
                     },
                     {
@@ -169,18 +193,38 @@ declare global {
                     {
                         table: 'sys_hub_step_ext_input'
                         id: '63c972fe2cad45919cd53cc69d8d040f'
+                        deleted: true
                         key: {
                             model: '459228bb081646faac5c3d04692517d6'
                             element: 'recordId'
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '647ecf9ed20449ca8ca823fb1756f4a3'
+                        key: {
+                            name: 'var__m_sys_hub_action_input_ae6c3cf454be489bbd030cb8d6f7b6d3'
+                            element: 'attachmentId'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_element_mapping'
                         id: '6e61b5ebc590425c8e840635224a85b0'
+                        deleted: true
                         key: {
                             field: 'recordId'
                             table: 'var__m_sys_hub_step_ext_input_459228bb081646faac5c3d04692517d6'
                             id: '459228bb081646faac5c3d04692517d6'
+                        }
+                    },
+                    {
+                        table: 'sys_element_mapping'
+                        id: '76d3bf8c5e1a4a8189ece4c96a97a7f1'
+                        key: {
+                            field: 'recordId'
+                            table: 'var__m_sys_hub_action_output_ae6c3cf454be489bbd030cb8d6f7b6d3'
+                            id: 'ae6c3cf454be489bbd030cb8d6f7b6d3'
                         }
                     },
                     {
@@ -195,6 +239,7 @@ declare global {
                     {
                         table: 'sys_hub_action_input'
                         id: '8828229a22534328add3c5d66e8db85b'
+                        deleted: true
                         key: {
                             model: 'ae6c3cf454be489bbd030cb8d6f7b6d3'
                             element: 'recordId'
@@ -209,11 +254,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_hub_step_ext_output'
+                        id: '9028a8fce45944f6b3ce9dbb508b1910'
+                        key: {
+                            model: '459228bb081646faac5c3d04692517d6'
+                            element: 'recordId'
+                        }
+                    },
+                    {
                         table: 'sys_hub_action_output'
                         id: '916f0b9adb9a41ef94f11395a8cf0bbb'
                         key: {
                             model: 'e9c4d69cfc314c87ab9a11d2634b35d9'
                             element: 'done'
+                        }
+                    },
+                    {
+                        table: 'sys_element_mapping'
+                        id: '944ea8c4f08d4479af5cbfa97efbceea'
+                        key: {
+                            field: 'attachmentId'
+                            table: 'var__m_sys_hub_step_ext_input_459228bb081646faac5c3d04692517d6'
+                            id: '459228bb081646faac5c3d04692517d6'
                         }
                     },
                     {
@@ -279,6 +341,7 @@ declare global {
                     {
                         table: 'sys_documentation'
                         id: 'b27b07777749447eb79fe96d6272c84b'
+                        deleted: true
                         key: {
                             name: 'var__m_sys_hub_action_input_ae6c3cf454be489bbd030cb8d6f7b6d3'
                             element: 'recordId'
@@ -341,6 +404,15 @@ declare global {
                         key: {
                             model: 'e9c4d69cfc314c87ab9a11d2634b35d9'
                             element: 'taskId'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fe1bca2f9ff04bf99c58fe160e3ccac4'
+                        key: {
+                            name: 'var__m_sys_hub_action_output_ae6c3cf454be489bbd030cb8d6f7b6d3'
+                            element: 'recordId'
+                            language: 'en'
                         }
                     },
                 ]

@@ -1,9 +1,32 @@
 (function execute(inputs, outputs) {
+    // The flow triggers on the attachment, so resolve its host record here --
+    // sys_attachment.table_sys_id is typed string | number upstream, which a
+    // StringColumn action input will not accept.
+    var att = new GlideRecord('sys_attachment');
+    if (!att.get(inputs.attachmentId)) {
+        gs.error('[SubmitFinancialExtraction] Attachment not found: ' + inputs.attachmentId);
+        return;
+    }
+    var recordId = att.getValue('table_sys_id');
+    outputs.recordId = recordId;
+
+    // The already-extracted guard that used to live in the trigger condition
+    // happens here -- otherwise a second upload re-extracts and overwrites.
+    var reg = new GlideRecord('x_bca_reg_contractor_reg');
+    if (!reg.get(recordId)) {
+        gs.error('[SubmitFinancialExtraction] Record not found: ' + recordId);
+        return;
+    }
+    if (reg.getValue('financial_report_extracted') === 'true') {
+        gs.info('[SubmitFinancialExtraction] Skipping ' + recordId + ' -- already extracted');
+        return;
+    }
+
     var api = new sn_docintel_gen_ai.DocIntelGenAIAPI();
 
     var taskId = api.extractFields({
         sourceTable: 'x_bca_reg_contractor_reg',
-        sourceRecord: inputs.recordId,
+        sourceRecord: recordId,
         schema: {
             keys: [
                 { name: 'fin_entity_name', description: 'Entity name shown on the financial report', type: 'string' },
